@@ -8,6 +8,9 @@ import hide from '../../assets/hide.svg'
 import frontSign from '../../assets/frontSign.svg'
 import { Navigate } from 'react-router-dom';
 import { useRef, useState } from 'react'
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import {Link} from 'react-router-dom'
 function Signup(){
 
     // This Section is For posting the signup information to the server
@@ -42,9 +45,15 @@ function Signup(){
                   body: JSON.stringify({username: username,email: email,password: password})
               })
               if(response.ok){
-                alert('Successfully signed in')
-                setSignedUp(true)
+                // alert('Successfully signed in')
+                // setSignedUp(true)
+                // console.log(await response.json());
                 console.log(await response.json());
+                toast.success('Signed up successfully',{
+                    onClose: ()=>{
+                        setSignedUp(true)
+                    }
+                });
               }
               else{
                 alert('Failed to sign in')
@@ -101,11 +110,13 @@ function Signup(){
                  </header>
                  <main className='main-div'>
                     <div className="top">
-                      <div className="circle">
+                     <Link to={'/'}>
+                     <div className="circle">
                          <img src={backSign} alt="" />
                       </div>
+                     </Link>
                       <div>
-                        <p>Already a Member ? <span style={{ color: '#987DF5' }}>Sign In</span></p>
+                        <p>Already a Member ? <Link to={'/login'}><span style={{ color: '#987DF5',textDecorationLine: 'none' }}>Sign In</span></Link></p>
                       </div>
                     </div>
                     <div>
@@ -156,6 +167,7 @@ function Signup(){
                       </form>
                     </div>
                  </main>
+                 <ToastContainer autoClose={1000}></ToastContainer>
               </div>
             </>
         )

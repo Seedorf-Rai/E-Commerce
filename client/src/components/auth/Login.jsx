@@ -8,6 +8,10 @@ import hide from '../../assets/hide.svg'
 import frontSign from '../../assets/frontSign.svg'
 import { Navigate } from 'react-router-dom';
 import { useRef, useState } from 'react'
+import { ToastContainer, toast } from 'react-toastify';
+import {Link} from 'react-router-dom'
+
+import 'react-toastify/dist/ReactToastify.css';
 function Login(){
 
     // This Section is For posting the signup information to the server
@@ -55,7 +59,9 @@ function Login(){
              }
              else{
                 console.log(result);
-                setSignedUp(true)
+                toast.success("Login successful!", {
+                    onClose: () => setSignedUp(true) // Redirect to home after toast is shown
+                });
              }
          }
          catch(err){
@@ -97,11 +103,13 @@ function Login(){
                  </header>
                  <main className='main-div'>
                     <div className="top">
+                      <Link to={'/'}>
                       <div className="circle">
                          <img src={backSign} alt="" />
                       </div>
+                      </Link>
                       <div>
-                        <p>New Here ? <span style={{ color: '#987DF5' }}>Sign Up</span></p>
+                        <p>New Here ? <Link to={'/signup'}><span style={{ color: '#987DF5' }}>Sign Up</span></Link> </p>
                       </div>
                     </div>
                     <div>
@@ -139,6 +147,7 @@ function Login(){
                       </form>
                     </div>
                  </main>
+                 <ToastContainer autoClose={1000} ></ToastContainer>
               </div>
             </>
         )
