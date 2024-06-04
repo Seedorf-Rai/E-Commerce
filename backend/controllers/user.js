@@ -12,6 +12,7 @@ module.exports.SignupUser = async (req, res) => {
     email,
     password,
   };
+  console.log(data);
   //checking the input type of the given data
   let validation = userSchema.safeParse(data);
   if (!validation.success) {

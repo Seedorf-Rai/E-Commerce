@@ -1,0 +1,98 @@
+.auth-main{
+    height: 100vh;
+    background-image: url('../assets/login-bg.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: right;
+}
+header{
+    padding: 10px 4%;
+}
+header h1{
+  color: #987DF5;
+  font-size: 30px;
+  font-weight: 500;
+}
+.main-div{
+    width: 30%;
+}
+.circle{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 1px solid #cccccc;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 2px;
+}
+.top{
+    display: flex;
+    justify-content: space-between;
+}
+.main-div{
+    margin-left: 15%;
+    padding-top: 2%;
+}
+.auth-bold-text{
+    font-size: 56px;
+    margin-top: 34px;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+.input-box{
+    margin-top: 30px;
+    position: relative;
+    /* background-color:red; */
+}
+.input-img{
+    position: absolute;
+    left: 10px;
+    bottom: 3px;
+}
+.input-eye{
+    position: absolute;
+    right: 0px;
+}
+.input-img img{
+    width: 16px;
+    height: 17px;
+    /* object-fit: cover; */
+}
+.input-box input{
+
+    width: 100%;
+    padding-left: 40px;
+    padding-bottom: 4px;
+    border: none;
+    border-bottom: 2px solid #ccc;
+    outline: none;
+}
+.auth-btn{
+    width: 188px;
+    height: 42px;
+    background-color: #987DF5;
+    color: white;
+    border-radius: 100px ;
+    border: none;
+    position: relative;
+    margin-top: 0px;
+}
+.auth-btn:hover{
+    cursor: pointer;
+}
+.btn-arr{
+    position: absolute;
+    height: 30px;
+    width: 30px;
+    right: 8px;
+    border-radius: 50%;
+    background-color: #fff;
+    opacity: 0.5;
+    bottom: 7px;
+}
+.btn-img{
+    position: absolute;
+    right: 14px;
+    width: 16px;
+}
